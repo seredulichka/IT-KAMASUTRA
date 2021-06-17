@@ -1,0 +1,14 @@
+
+.image{
+  height: 300px;
+}
+
+.item{
+  color:rgb(18, 76, 82);
+}
+
+.item img{
+  width: 50px;
+  height: 40px;
+  border-radius: 50px;
+}

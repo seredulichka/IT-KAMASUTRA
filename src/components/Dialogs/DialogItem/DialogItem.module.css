@@ -1,0 +1,12 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.active{
+    color: rgb(127, 249, 196);
+}
+
+.avatar{
+    width: 40px;
+}

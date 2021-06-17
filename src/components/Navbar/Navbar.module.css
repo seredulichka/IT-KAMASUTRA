@@ -1,0 +1,20 @@
+.nav {
+  grid-area: n;
+  background-color: #333333;
+  padding: 20px;
+}
+
+.item, a {
+  color:rgb(239, 244, 239);
+  text-decoration: none;
+}
+
+.activeLink{
+  color: rgb(108, 254, 232);
+}
+
+.onlineFriens{
+  padding-top: 30px;
+  color: rgb(108, 254, 232);
+  text-transform: uppercase;
+}

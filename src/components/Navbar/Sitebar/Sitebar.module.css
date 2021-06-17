@@ -1,0 +1,15 @@
+.img{
+  border-radius: 50%;
+  height: 50px;
+  margin-top: 20px;
+  margin-right: 5px;
+  border: 1px solid white;
+}
+
+.activeLink{
+  border-style: rgb(108, 254, 232);
+}
+
+.name{
+  color: whitesmoke;
+}
