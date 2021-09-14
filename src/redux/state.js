@@ -1,8 +1,11 @@
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
+import sitebarReducer from "./sitebar-reducer";
+
 const ADD_POST = 'ADD-POST',
       UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT',
       ADD_MESSAGE = 'ADD-MESSAGE',
       UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-
 
 let store = {
     _state: { 
@@ -50,36 +53,11 @@ let store = {
     },
 
     dispatch(action){
-        if (action.type === 'ADD-POST'){
-            let newPost = {
-                id:5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0
-            };
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sitebar = sitebarReducer(this._state.sitebar, action);
         
-            this._state.profilePage.postsData.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber();
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT'){
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber();
-        } else if (action.type === 'ADD-MESSAGE'){
-            // let newMessage = {
-            //     id:5,
-            //     message: this._state.dialogsPage.newMessageText
-            // };
-        
-            // this._state.dialogsPage.messages.push(newMessage);
-            // this._state.dialogsPage.newMessageText = '';
-            // this._callSubscriber();
-            let body = this._state.dialogsPage.newMessageText;
-            this._state.dialogsPage.newMessageText = '';
-            this._state.dialogsPage.messages.push({id:6, message: body});
-            this._callSubscriber();
-        } else if(action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubscriber();
-        }
+        this._callSubscriber();
     }
 }
 
