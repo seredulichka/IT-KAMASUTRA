@@ -1,6 +1,5 @@
 import React from  'react';
 import s from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../redux/state';
@@ -12,15 +11,11 @@ const Dialogs = (props) => {
 
     let addMessage = () => {
         props.dispatch(addMessageActionCreator());
-        //props.toAddMessage();
         props.dispatch(updateNewMessageTextActionCreator(''));
-        //props.updateNewMessageText('');
     }
     
     let onMessageChange = (event) => {
-        let text = event.target.value; //так мы обходим чтобы не использовать ref
-        //let text = newDialogItem.current.value;
-        //props.updateNewMessageText(text);
+        let text = event.target.value;
         props.dispatch(updateNewMessageTextActionCreator(text));
     }
 
@@ -33,7 +28,6 @@ const Dialogs = (props) => {
                 <div className={s.messages}>
                     { messagesElements }
                     <textarea value = {props.newMessageText} onChange={onMessageChange}>
-
                     </textarea>
                     <button onClick={addMessage}>
                         Send
@@ -41,7 +35,6 @@ const Dialogs = (props) => {
                 </div>
             </div>
         </div>
-        
     )
 }
 
