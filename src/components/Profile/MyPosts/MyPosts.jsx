@@ -5,19 +5,15 @@ import Post from './Post/Post';
 
 const MyPosts = (props) => {
 
-  let postsElement = props.postsData.map( p => <Post message={p.message} likesCount={p.likesCount}/> );
+  let postsElement = props.profilePage.posts.map( p => <Post message={p.message} likesCount={p.likesCount}/> );
   
   let addPost = () => {
-    //props.toAddPost();
-    props.dispatch(addPostActionCreator());
+    props.addPost();
   }
 
   let onPostChange = (e) => {
-    //let text = newPostElement.current.value;
     let text = e.target.value;
-    //props.updateNewPostText(text);
-    //props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
-    props.dispatch(updateNewPostTextActionCreator(text));
+    props.updateNewPostText(text);
   }
 
   return (
@@ -27,7 +23,7 @@ const MyPosts = (props) => {
       </h3>
       <div>
         <div>
-          <textarea value = {props.newPostText} onChange={onPostChange}/>
+          <textarea value = {props.profilePage.newPostText} onChange={onPostChange}/>
         </div>
         <div>
           <button onClick={addPost}> 

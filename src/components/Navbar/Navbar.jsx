@@ -4,8 +4,8 @@ import s from './Navbar.module.css';
 import Sitebar from './Sitebar/Sitebar';
 
 
-const Navbar = (props) => {
-  let friendsEl = props.state.friends.map( f => <Sitebar id={f.id} name={f.name} link={f.link}/>);
+const Navbar = () => {
+  // let friendsEl = props.state.friends.map( f => <Sitebar id={f.id} name={f.name} link={f.link}/>);
 
     return <nav className={s.nav}>
     <div>
@@ -37,7 +37,7 @@ const Navbar = (props) => {
       <div className={s.onlineFriens}>
         Friends online
       </div>
-        {friendsEl}
+        {/* {friendsEl} */}
     </div>
   </nav>
 }

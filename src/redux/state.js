@@ -10,7 +10,7 @@ const ADD_POST = 'ADD-POST',
 let store = {
     _state: { 
         profilePage:{
-            postsData:[{id: 1, message: 'Hi, how are you?', likesCount: 12}, 
+            posts:[{id: 1, message: 'Hi, how are you?', likesCount: 12}, 
                   {id: 2, message: "It's my first post", likesCount: 20}, 
                   {id: 3, message: "It's important to know this well", likesCount: 9}, 
                   {id: 4, message: 'It is a Haizenberg', likesCount: 18}
